@@ -25,3 +25,4 @@ lexicon = [
     }
   }
 ]
+"Friendship is like money, easier made than kept."
