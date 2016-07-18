@@ -1,3 +1,5 @@
+import nltk
+
 lexicon = [
   {
     "sentiment":
@@ -25,3 +27,5 @@ lexicon = [
     }
   }
 ]
+
+print(lexicon)
