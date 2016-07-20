@@ -18,12 +18,12 @@ class Token:
 
 
   def alpha_num_characters(self, text):
-      aplhaNumText = "".join(c for c in text if c not in ('!','.',':','?',',',"'",'-',' '))
-      aplhaNumText = aplhaNumText.lower()
-      df = nltk.FreqDist(aplhaNumText)
-      alphaNums = list(df.keys())
-      alphaNums.sort()
-      return alphaNums
+    aplhaNumText = "".join(c for c in text if c not in ('!','.',':','?',',',"'",'-',' '))
+    aplhaNumText = aplhaNumText.lower()
+    df = nltk.FreqDist(aplhaNumText)
+    alphaNums = list(df.keys())
+    alphaNums.sort()
+    return alphaNums
 
 
   def list_of_punctuation(self,text):
@@ -31,7 +31,7 @@ class Token:
     for i in text:
         if i =="," or i=="." or i=="!" or i =="?" or i ==":" or i ==";":
          punctuation_list.append(i)
-         return punctuation_list
+    return punctuation_list
 
 
   def sentence_list(self, text):
