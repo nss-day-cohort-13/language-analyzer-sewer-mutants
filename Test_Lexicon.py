@@ -2,7 +2,7 @@ lexicon = [
   {
     "sentiment":
     {
-      "positive": ['Friendship': [0.45], 'like': [0.6], 'easier': [0.5], 'kept': [0.3]],
+      "positive": [('Friendship', [0.45]), 'like': [0.6], 'easier': [0.5], 'kept': [0.3]],
       "negative": ['than': [0.93]],
       "neutral": ['money': [0.65], 'made': [0.28]]
     },
