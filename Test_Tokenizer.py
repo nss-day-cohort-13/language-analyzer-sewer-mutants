@@ -1,43 +1,37 @@
-import nltk
-from nltk.tokenize import sent_tokenize, word_tokenize
-from nltk.tokenize import RegexpTokenizer
+import unittest
+import tokenizer
+
+class TestTokenizer(unittest.TestCase):
+
+    def test_if_input_is_string(self):
+        test_string = "Hello Mr. Smith, how are you doing today? The weather is great, and Python is awesome. The sky is pinkish-blue. You shouldn't eat cardboard."
+        self.assertIsInstance(tokenizer.phrase_to_string(test_string),str)
+
+    def test_cannot_equal_empty_string(self):
+        test_string = ""
+
+        self.assertRaises(TypeError, tokenizer.phrase_to_string(test_string))
+    def test_string_is_tokenized(self):
+        test_string = "Hello Mr. Smith, how are you doing today? The weather is great, and Python is awesome. The sky is pinkish-blue. You shouldn't eat cardboard."
+        self.assertIsInstance(tokenizer.words_are_tokenized(test_string),list)
 
 
-text1 = "Hello Mr. Smith, how are you doing today? The weather is great, and Python is awesome. The sky is pinkish-blue. You shouldn't eat cardboard."
+    def test_list_contains_only_alpha_numeric_characters(self):
+        test_string = "Hello Mr. Smith, how are you doing today? The weather is great, and Python is awesome. The sky is pinkish-blue. You shouldn't eat cardboard."
+        self.assertIsInstance(tokenizer.alpha_num_characters(test_string),list)
 
-text1 = text1.lower()
+    def test_list_contains_only_punctuation(self):
 
-wordCount = (word_tokenize(text1))
+    def test_list_contains_only_sentences(self):
 
-punctuation_list = []
-for i in wordCount:
-   if i =="," or i=="." or i=="!" or i =="?" or i ==":" or i ==";":
-    punctuation_list.append(i)
+    def test_sentence_length_value__is_integer(self):
 
-    print(punctuation_list)            # makes list of all punctuation marks in list of words
+    def test_dict_returns_word_frequency(self):
 
-# ****SENTENCE COUNT******
-SentCount = (sent_tokenize(text1))
-
-print(len(SentCount)) # outputs  sentence count
-
-
-#****** WORD FREQUENCY/ ALPHA NUMERIC/ WORD COUNT *******
-
-from nltk.tokenize import RegexpTokenizer
-tokenizer = RegexpTokenizer(r'\w+')
-tokenWords = tokenizer.tokenize(text1)  #converts initial string into list of words
-
-print(tokenWords)
-
-
-
-fd = nltk.FreqDist(tokenWords)
-wordFreq = fd.items()                   #outputs word frequency
-
-print(wordFreq)
+    def test_dict_contains_word_position(sself):
 
 
 
-wordPos = dict(enumerate(tokenWords))
-print(wordPos)
+if __name__ == '__main__':
+  unittest.main()
+
