@@ -25,10 +25,10 @@ class TestTokenizer(unittest.TestCase):
 
 
     def test_list_contains_only_punctuation(self):
-        self.assertEqual(self.tokenizer.list_of_punctuation(self.test_string_tokenized),[","], [",","."])
+        self.assertEqual(self.tokenizer.list_of_punctuation(self.test_string_tokenized),[',', '?', ',', '.', '.', '.'])
 
 
-    def test_list_contains_only_sentences(self):
+    def test_list_contains_seperate_sentences(self):
         self.assertEqual(self.tokenizer.sentence_list(self.test_string),['Hello Mr. Smith, how are you doing today?', 'The weather is great, and Python is awesome.', 'The sky is pinkish-blue.', 'You should eat cardboard.'] )
 
 
