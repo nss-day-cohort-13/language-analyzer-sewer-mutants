@@ -1,3 +1,5 @@
+import nltk
+
 messages = [
   {
     "author": "Françoise Sagan",

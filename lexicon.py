@@ -1,3 +1,5 @@
+import nltk
+
 lexicon = [
   {
     "sentiment":
@@ -25,4 +27,6 @@ lexicon = [
     }
   }
 ]
+
 "Friendship is like money, easier made than kept."
+
