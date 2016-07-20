@@ -1,4 +1,4 @@
-
+import tokenizer
 
 # class Behavior:
 # 	def __init__(self, name):
