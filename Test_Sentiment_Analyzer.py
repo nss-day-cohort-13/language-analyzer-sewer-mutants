@@ -1,5 +1,5 @@
 import unittest
-from sentiment_analyzer import *
+from Sentiment_Analyzer import *
 
 class TestSentiment(unittest.TestCase):
 
@@ -23,7 +23,7 @@ class TestSentiment(unittest.TestCase):
         self.assertequal(sentiment.assign_positive_values(self.test_list_positive),[0,0,1,0,0,1,0])
 
     def test_sentiment_comprehension_returns_list_of_numbers_for_neutral_sentiment(self):
-        self.assertequal(sentiment.assign_neutral_values(self.test_list_neutral),[0,0,1,0])
+        self.assertequal(sentiment.assign_neutral_values(self.test_list_neutral),[0,0,1,1])
 
     def test_sentiment_comprehension_returns_list_of_numbers_for_negative_sentiment(self):
         self.assertequal(sentiment.assign_negative_values(self.test_list_negative),[0,1,0,1,0])
