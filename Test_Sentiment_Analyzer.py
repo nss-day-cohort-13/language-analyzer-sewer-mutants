@@ -24,21 +24,21 @@ class TestSentiment(unittest.TestCase):
         self.assertEqual(self.sentiment.assign_positive_values(self.test_list_positive),[0,0,1,0,0,1,0])
 
     def test_sentiment_comprehension_returns_list_of_numbers_for_neutral_sentiment(self):
-        self.assertEquals(self.sentiment.assign_neutral_values(self.test_list_neutral),[0,0,1,0])
+        self.assertEqual(self.sentiment.assign_neutral_values(self.test_list_neutral),[0,0,1,0])
 
     def test_sentiment_comprehension_returns_list_of_numbers_for_negative_sentiment(self):
-        self.assertEquals(self.sentiment.assign_negative_values(self.test_list_negative),[0,1,0,1,0])
+        self.assertEqual(self.sentiment.assign_negative_values(self.test_list_negative),[0,1,0,1,0])
 
 
-
+#THESE AREN'T PASSING, YET.
     # def test_list_of_numbers_converted_to_dictionary_for_positive_sentiment(self):
-    #     self.assertEquals(sentiment.positive_dictionary(test_list_positive, {"positive": 2}))
+    #     self.assertEqual(sentiment.positive_dictionary(test_list_positive, {"positive": 2}))
 
     # def test_list_of_numbers_converted_to_dictionary_for_neutral_sentiment(self):
-    #     self.assertEquals(sentiment.neutral_dictionary(test_list_neutral, {"neutral": 1}))
+    #     self.assertEqual(sentiment.neutral_dictionary(test_list_neutral, {"neutral": 1}))
 
     # def test_list_of_numbers_converted_to_dictionary_for_negative_sentiment(self):
-    #     self.assertEquals(sentiment.negative_dictionary(test_list_negative, {"negative": 2}))
+    #     self.assertEqual(sentiment.negative_dictionary(test_list_negative, {"negative": 2}))
 
 
 
