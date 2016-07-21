@@ -18,8 +18,6 @@ class TestLanguageAnalyzer(unittest.TestCase):
   def test_that_LA_receives_domain_value_from_domain_identifier_py(self):
 
 
-  ???
-
 
   def test_that_LA_returns_original_input_string(self):
 
@@ -34,11 +32,6 @@ class TestLanguageAnalyzer(unittest.TestCase):
   def test_that_LA_returns_domain_value_as_string(self):
 
   def test_that_DV_string_contains_keys_for_all_domains_in_message_string(self):
-
-
-
-  profit!
-
 
 
 
