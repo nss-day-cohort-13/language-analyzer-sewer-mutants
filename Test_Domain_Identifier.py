@@ -51,7 +51,7 @@ class TestDomainIdentifier(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main()
+  unittest.main()
 
   # def test_that_domain_identifier_receives_master_word_list_from_tokenizer(self):
   #   self.assertEqual(lexicon.master.list, list)
