@@ -1,45 +1,63 @@
 import unittest
-import behavior
 from tokenizer import *
-
+from behavior_analyzer import *
+import lexicon
 class TestBehaviorAnalyzer(unittest.TestCase):
 
-  def test_that_behavior_analyzer_receives_list_from_tokenizer(self):
-    self.assertEqual(self.tokenizer.words_are_tokenized()
+    @classmethod
+    def setUp(self):
+        self.behavior_analyzer = Behave()
+        self.test_list_aggressive = ["Get", "the", "hell", "out", ",", "before", "I" ,"hammer", "stomp", "your", "ugly", "face", "in", "!"]
+        self.test_list_passive = ["Whatever", "it's", "meh", "they", "taste", "fine", "."]
+        self.test_list_excited = ["OMG","!", "I", "love", "chocolate", "!"]
+        self.test_list_inquisitive = ["Do", "you", "even", "lift", "bro", "?"]
 
-  def test_behavior_input_is_a_list(self):
-    pass
+        # self.test_dict_aggressive= {"aggresive": 5}
+        # self.test_dict_passive= {"passive": 4}
+        # self.test_dict_excited= {"excited": 5}
+        # self.test_dict_inquisitive = {"inquisitive": 3}
 
-  def test_behavior_input_returns_a_list_of_integers(self):
-    pass
+        self.agro_nums= [0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1]
+        self.passive_nums= [1, 0, 1, 0, 0, 1, 1]
+        self.excited_nums= [1,1,0,1,1,1]
+        self.inquisitive_nums= [1, 0, 1, 0, 0, 1]
 
-  def test_input_list_contains_alphanumeric_characters(self):
-    pass
+    def test_behavior_input_is_a_list(self):
+        self.assertIsInstance(self.test_list_aggressive,list)
+        self.assertIsInstance(self.test_list_passive,list)
+        self.assertIsInstance(self.test_list_excited,list)
+        self.assertIsInstance(self.test_list_inquisitive,list)
 
-  def test_input_list_contains_punctuation(self):
-    pass
 
-  def test_passive_sentence_contains_periods_and_commas(self):
-    pass
 
-  def test_aggressive_sentence_contains_exclamation(self):
-    pass
+    def test_behavior_comprehension_returns_list_of_numbers_for_aggressive_behavior(self):
+        self.assertEqual(self.behavior_analyzer.assign_aggressive_values(self.test_list_aggressive),[0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1])
 
-  def test_sentence_contains_aggressive_words(self):
-    pass
+    def test_behavior_comprehension_returns_list_of_numbers_for_passive_behavior(self):
+        self.assertEqual(self.behavior_analyzer.assign_passive_values(self.test_list_passive),[1, 0, 1, 0, 0, 1, 1])
 
-  def test_assertiveness_sentence_contains_periods(self):
-    pass
 
-  def test_inquisitiveness_sentence_contains_question_marks(self):
-    pass
+    def test_behavior_comprehension_returns_list_of_numbers_for_excited_behavior(self):
+        self.assertEqual(self.behavior_analyzer.assign_excited_values(self.test_list_excited),[1,1,0,1,1,1])
 
-  def test_passive_aggressiveness_sentence_contains_question_marks_commas(self):
-    pass
+    def test_behavior_comprehension_returns_list_of_numbers_for_inquisitive_behavior(self):
+        self.assertEqual(self.behavior_analyzer.assign_inquisitive_values(self.test_list_inquisitive),[1, 0, 1, 0, 0, 1])
 
-  def test_informative_sentence_contains_periods_and_semi_colons(self):
-    pass
+
+    def test_list_of_numbers_converted_to_dictionary_for_aggresive_behavior(self):
+        self.assertEqual(self.behavior_analyzer.aggressive_dictionary(self.agro_nums), {"aggressive": 5})
+
+    def test_list_of_numbers_converted_to_dictionary_for_passive_behavior(self):
+        self.assertEqual(self.behavior_analyzer.passive_dictionary(self.passive_nums), {"passive": 4})
+
+    def test_list_of_numbers_converted_to_dictionary_for_excited_behavior(self):
+        self.assertEqual(self.behavior_analyzer.excited_dictionary(self.excited_nums), {"excited": 5})
+
+    def test_list_of_numbers_converted_to_dictionary_for_inquisitive_behavior(self):
+        self.assertEqual(self.behavior_analyzer.inquisitive_dictionary(self.inquisitive_nums), {"inquisitive": 3})
+
 
 
 if __name__ == '__main__':
   unittest.main()
+
