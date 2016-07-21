@@ -47,7 +47,7 @@ class TestDomainIdentifier(unittest.Testcase)
     self.assertEqual(self.domain.assign_political_values(self.test_list_political),[0,0,1,0,0,0,1,0])
 
   def test_domain_comprehension_returns_list_of_numbers_for_relational_domain(self):
-    self.asserEequal(self.domain.assign_realtional_values(self.test_list_relational),[1,0,0,1,0])
+    self.assertEqual(self.domain.assign_realtional_values(self.test_list_relational),[1,0,0,1,0])
 
 if __name__ == '__main__':
     unittest.main()
