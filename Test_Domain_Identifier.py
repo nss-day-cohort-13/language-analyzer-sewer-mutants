@@ -4,7 +4,7 @@ import tokenizer
 class TestDomainIdentifier(unittest.TestCase):
 
   @classmethod
-  def domain_set_up(self):
+  def setUpClass(self):
     self.test_list_financial= ["Money", ";", "it's", "a", "gas", "."]
     self.test_list_behavioral= ["S", "T", "F", "U", "!"]
     self.test_list_scientific= ["I", "have", "become", "capable", "of", "bestowing", "animation", "upon", "lifeless", "matter", "!"]
@@ -20,12 +20,12 @@ class TestDomainIdentifier(unittest.TestCase):
     self.test_dict_relational= {"relationship": 2}
 
   def test_domain_input_is_a_list(self):
-    self.assertIsInstance(self.test_string_financial, list)
-    self.assertIsInstance(self.test_string_behavioral, list)
-    self.assertIsInstance(self.test_string_scientific, list)
-    self.assertIsInstance(self.test_string_educational, list)
-    self.assertIsInstance(self.test_string_political, list)
-    self.assertIsInstance(self.test_string_realtional, list)
+    self.assertIsInstance(self.test_list_financial, list)
+    self.assertIsInstance(self.test_list_behavioral, list)
+    self.assertIsInstance(self.test_list_scientific, list)
+    self.assertIsInstance(self.test_list_educational, list)
+    self.assertIsInstance(self.test_list_political, list)
+    self.assertIsInstance(self.test_list_relational, list)
 
   # This test group ensures that each domain-specific high-value word
   # (e.g.-'money' for financial domain) receives a value of 1 and that
@@ -48,6 +48,7 @@ class TestDomainIdentifier(unittest.TestCase):
 
   def test_domain_comprehension_returns_list_of_numbers_for_relational_domain(self):
     self.assertEqual(self.domain.assign_realtional_values(self.test_list_relational),[1,0,0,1,0])
+
 
 if __name__ == '__main__':
     unittest.main()
