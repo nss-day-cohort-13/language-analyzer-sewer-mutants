@@ -1,9 +1,9 @@
 import unittest
 import tokenizer
 
-class TestDomainIdentifier(unittest.Testcase)
+class TestDomainIdentifier(unittest.TestCase):
 
-@classmethod
+  @classmethod
   def domain_set_up(self):
     self.test_list_financial= ["Money", ";", "it's", "a", "gas", "."]
     self.test_list_behavioral= ["S", "T", "F", "U", "!"]
