@@ -1,4 +1,4 @@
-import tokenizer
+from tokenizer import *
 import lexicon
 
 class Behave:
@@ -7,15 +7,22 @@ class Behave:
   # excited_list=[]
   # inquisitive_list=[]
   def __init__(self, text):
+    self.tokenizer = Token(" ".join(text))
     self.aggressiveDict = {}
     self.passiveDict = {}
     self.excitedDict = {}
     self.inquisitiveDict = {}
 
+    self.tokenizer.words_are_tokenized(" ".join(text))
+    print(self.tokenizer.words_are_tokenized(" ".join(text)))
     self.assign_aggressive_values(text)
+    print(self.assign_aggressive_values(text))
     self.assign_passive_values(text)
+    print(self.assign_passive_values(text))
     self.assign_excited_values(text)
+    print(self.assign_excited_values(text))
     self.assign_inquisitive_values(text)
+    print(self.assign_inquisitive_values(text))
 
   def input_is_list(self, phrase):
     #"assures the input is not an empty string, and converts input into lower case"
@@ -97,6 +104,19 @@ class Behave:
           inquisitive_dict['inquisitive'] = inquisitive_sum # update existing entry
           self.inquisitiveDict = inquisitive_dict
     return inquisitive_dict
+
+  def spitBehavior(self, text):
+    if self.assign_aggressive_values(text) >= self.assign_passive_values(text):
+      print(self.assign_aggressive_values(text))
+    elif self.assign_passive_values(text) >= self.assign_aggressive_values(text):
+      print(self.assign_passive_values(text))
+
+    if self.assign_excited_values(text) >= self.assign_inquisitive_values(text):
+      print(self.assign_excited_values(text))
+    elif self.assign_inquisitive_values(text) >= self.assign_excited_values(text):
+      print(self.assign_inquisitive_values(text))
+
+
 
 
   # def aggressive_dictionary(self,agro):
