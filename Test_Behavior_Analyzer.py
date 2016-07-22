@@ -7,22 +7,27 @@ class TestBehaviorAnalyzer(unittest.TestCase):
     @classmethod
     def setUp(self):
         # self.behavior_analyzer = Behave()
+        self.test_list_all = ["Get", "the", "hell", "out", ",", "before", "I" ,"hammer", "stomp", "your", "ugly", "face", "in", "!",
+        "Whatever", "it's", "meh", "they", "taste", "fine", ".",
+        "OMG","1", "I", "love", "chocolate", "1",
+        "Do", "you", "even", "lift", "bro", "?"]
+
         self.test_list_aggressive = ["Get", "the", "hell", "out", ",", "before", "I" ,"hammer", "stomp", "your", "ugly", "face", "in", "!"]
         self.test_list_passive = ["Whatever", "it's", "meh", "they", "taste", "fine", "."]
-        self.test_list_excited = ["OMG","!", "I", "love", "chocolate", "!"]
+        self.test_list_excited = ["OMG","1", "I", "love", "chocolate", "1"]
         self.test_list_inquisitive = ["Do", "you", "even", "lift", "bro", "?"]
 
         self.test_dict_aggressive= {"aggressive": 5}
-        self.test_dict_passive= {"passive": 0}
-        self.test_dict_excited= {"excited": 2}
-        self.test_dict_inquisitive = {"inquisitive": 0}
+        self.test_dict_passive= {"passive": 4}
+        self.test_dict_excited= {"excited": 5}
+        self.test_dict_inquisitive = {"inquisitive": 3}
 
         # self.agro_nums= [0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1]
         # self.passive_nums= [1, 0, 1, 0, 0, 1, 1]
         # self.excited_nums= [1,1,0,1,1,1]
         # self.inquisitive_nums= [1, 0, 1, 0, 0, 1]
 
-        self.behavior_analyzer= Behave(self.test_list_aggressive)
+        self.behavior_analyzer= Behave(self.test_list_all)
 
 
 
@@ -35,7 +40,7 @@ class TestBehaviorAnalyzer(unittest.TestCase):
 
 
     def test_behavior_comprehension_returns_list_of_numbers_for_aggressive_behavior(self):
-        self.assertEqual(self.behavior_analyzer.assign_aggressive_values(self.test_list_aggressive),{'aggressive': 5})
+        self.assertEqual(self.behavior_analyzer.assign_aggressive_values(self.test_list_all),{'aggressive': 5})
 
     def test_behavior_comprehension_returns_list_of_numbers_for_passive_behavior(self):
         self.assertEqual(self.behavior_analyzer.assign_passive_values(self.test_list_passive),{'passive':4})
