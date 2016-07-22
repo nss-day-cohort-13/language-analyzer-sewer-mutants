@@ -1,49 +1,100 @@
-import tokenizer
+from tokenizer import *
 import lexicon
-from behavior_analyzer import *
 
-# print(lexicon.positive_sentiment)
+class Sentiment:
 
-class Sentiment_analyzer:
-
-
-	def assign_positive_values(self, sentence_list):
-		positive_list=[]
-
-
-		for item in sentence_list:
-			value = lexicon.positive_sentiment.get(item, 0)
-			positive_list.append(value)
-		# print(positive_list)
-
-		return positive_list
-
-	def assign_neutral_values(self, sentence_list):
-		neutral_list=[]
+  # neutral_list=[]
+  # positive_list=[]
+  # inquisitive_list=[]
+  def __init__(self, text):
+    self.tokenizer = Token(" ".join(text))
+    self.negativeDict = {}
+    self.neutralDict = {}
+    self.positiveDict = {}
 
 
-		for item in sentence_list:
-			value = lexicon.neutral_sentiment.get(item, 0)
-			neutral_list.append(value)
+    self.tokenizer.words_are_tokenized(" ".join(text))
+    print(self.tokenizer.words_are_tokenized(" ".join(text)))
+    self.assign_negative_values(text)
+    print(self.assign_negative_values(text))
+    self.assign_neutral_values(text)
+    print(self.assign_neutral_values(text))
+    self.assign_positive_values(text)
+    print(self.assign_positive_values(text))
 
 
-		# print(neutral_list)
+  def input_is_list(self, phrase):
+    #"assures the input is not an empty string, and converts input into lower case"
 
-		return neutral_list
-
-	def assign_negative_values(self, sentence_list):
-		negative_list=[]
-
-
-		for item in sentence_list:
-			value = lexicon.negative_sentiment.get(item, 0)
-			negative_list.append(value)
-		# print(negative_list)
-
-		return negative_list
+    text = phrase
+    return text
 
 
+  def assign_negative_values(self, phrase):
+    negative_list=[]
+    for item in phrase:
+          value = lexicon.negative_sentiment.get(item, 0)
+          negative_list.append(value)
+    # Analyze.negative_dictionary(self, negative_list)
 
-# assign_positive_values(["it", "is", "nice", "to", "be", "happy", "."])
+          negative_dict = {}
+          negative_nums = negative_list
 
+          negative_sum = sum(negative_nums)
+
+          negative_dict['negative'] = negative_sum # update existing entry
+          self.negativeDict = negative_dict
+    return negative_dict
+
+
+
+
+  def assign_neutral_values(self, phrase):
+    neutral_list=[]
+    for item in phrase:
+          value = lexicon.neutral_sentiment.get(item, 0)
+          neutral_list.append(value)
+
+          neutral_dict = {}
+          neutral_nums = neutral_list
+
+          neutral_sum = sum(neutral_nums)
+
+          neutral_dict['neutral'] = neutral_sum # update existing entry
+          self.neutralDict = neutral_dict
+    return neutral_dict
+
+
+
+
+
+  def assign_positive_values(self,phrase):
+    positive_list=[]
+    for item in phrase:
+          value = lexicon.positive_sentiment.get(item, 0)
+          positive_list.append(value)
+
+
+          positive_dict = {}
+          positive_nums = positive_list
+
+          positive_sum = sum(positive_nums)
+
+          positive_dict['positive'] = positive_sum # update existing entry
+          self.positiveDict = positive_dict
+    return positive_dict
+
+
+
+
+  def spitsentiment(self, text):
+    if self.assign_negative_values(text) >= self.assign_neutral_values(text):
+      print(self.assign_negative_values(text))
+    elif self.assign_neutral_values(text) >= self.assign_negative_values(text):
+      print(self.assign_neutral_values(text))
+
+    if self.assign_positive_values(text) >= self.assign_inquisitive_values(text):
+      print(self.assign_positive_values(text))
+    elif self.assign_inquisitive_values(text) >= self.assign_positive_values(text):
+      print(self.assign_inquisitive_values(text))
 
