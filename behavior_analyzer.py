@@ -6,6 +6,16 @@ class Behave:
   # passive_list=[]
   # excited_list=[]
   # inquisitive_list=[]
+  def __init__(self,text1, text2, text3, text4):
+    self.aggressiveDict = {}
+    self.passiveDict = {}
+    self.excitedDict = {}
+    self.inquisitiveDict = {}
+
+    self.aggressive_dictionary(text1)
+    self.passive_dictionary(text2)
+    self.excited_dictionary(text3)
+    self.inquisitive_dictionary(text4)
 
   def input_is_list(self, phrase):
     #"assures the input is not an empty string, and converts input into lower case"
@@ -51,6 +61,7 @@ class Behave:
           inquisitive_list.append(value)
     print(inquisitive_list)
     Behave.inquisitive_dictionary(self, inquisitive_list)
+
     return inquisitive_list
 
 
@@ -61,6 +72,7 @@ class Behave:
     aggressive_sum = sum(aggressive_nums)
 
     aggressive_dict['aggressive'] = aggressive_sum # update existing entry
+    self.aggressiveDict = aggressive_dict
     return aggressive_dict
 
 
@@ -71,6 +83,8 @@ class Behave:
     passive_sum = sum(passive_nums)
 
     passive_dict['passive'] = passive_sum # update existing entry
+    self.passiveDict = passive_dict
+    print (passive_dict)
     return passive_dict
 
 
@@ -81,6 +95,7 @@ class Behave:
     excited_sum = sum(excited_nums)
 
     excited_dict['excited'] = excited_sum # update existing entry
+    self.excitedDict = excited_dict
     return excited_dict
 
 
@@ -91,4 +106,5 @@ class Behave:
     inquisitive_sum = sum(inquisitive_nums)
 
     inquisitive_dict['inquisitive'] = inquisitive_sum # update existing entry
+    self.inquisitiveDict = inquisitive_dict
     return inquisitive_dict
