@@ -31,9 +31,9 @@ pip install nltk
 ```
 
 If your machine is NOT running the latest version of python, please refer to the Installing Python section below.
-Installing Python:
+### Installing Python:
 
-#### Windows Users:
+##### Windows Users:
 
 Windows does not come with Python installed. You need to visit the Python downloads site and grab version 3.3.6 and install it. It will get installed to the C:\Python33 directory.
 
@@ -48,7 +48,7 @@ When the screen appears, click the button at the bottom for environment variable
 Next, click on the PATH variable and choose to edit it.
 Go to the end of the string, and enter a semi-colon, and the new path entry. ;C:\Python33
 
- #### Osx/Pyenv:
+ ##### Osx/Pyenv:
 
 OSX users, you should have Homebrew installed at this point. If you don't, do it now. Then run these commands in order.
 
@@ -67,7 +67,7 @@ Now, when you check the version of Python with the command below, it should retu
 python —version
 ```
 
-#### NLTK:
+##### NLTK:
 
 Once you have confirmed that Python is installed and your machine is running the latest version, you will then need to install NLTK(Natural Language Toolkit).
 
