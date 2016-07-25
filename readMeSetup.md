@@ -48,7 +48,7 @@ When the screen appears, click the button at the bottom for environment variable
 Next, click on the PATH variable and choose to edit it.
 Go to the end of the string, and enter a semi-colon, and the new path entry. ;C:\Python33
 
- ##### Osx/Pyenv:
+##### Osx/Pyenv:
 
 OSX users, you should have Homebrew installed at this point. If you don't, do it now. Then run these commands in order.
 
