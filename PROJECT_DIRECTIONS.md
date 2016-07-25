@@ -22,14 +22,14 @@ The language analyzer is the main module that will use sentiment analysis, and b
 
 Message: "Suzy sells seashells by the seashore"
 
-Sentiment: 
+Sentiment:
     0.52 (Positive)
 
-Behavior(s): 
+Behavior(s):
     0.58 (Aggressive)
     0.88 (Transaction)
 
-Domain(s): 
+Domain(s):
     0.925 (Financial)
 ```
 
@@ -86,5 +86,3 @@ There are two domains in this small quote.
 1. Financial
 
 However, the word position of `friendship`, being at the beginning of the sentence, may indicate that is has a higher weight.
-
-
