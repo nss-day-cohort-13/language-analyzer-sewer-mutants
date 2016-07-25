@@ -21,7 +21,7 @@ which python
 Check which version is installed. Most likely it will be version 2.7.x.
 
 ```
-python -version
+python -V
 ```
 
 Once have confirmed that Python is installed and your machine is running the latest version, you will then need to install NLTK(Natural Language Toolkit):
@@ -64,7 +64,7 @@ pyenv global 3.3.6
 Now, when you check the version of Python with the command below, it should return 3.3.6.
 
 ```
-python —version
+python -V
 ```
 
 ##### NLTK:
