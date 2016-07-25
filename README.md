@@ -39,11 +39,12 @@ Check which version is installed. Most likely it will be version 2.7.x.
 
 ```python -V```
 
-Once have confirmed that Python is installed and your machine is running the latest version, you will then need to install NLTK(Natural Language Toolkit):
+If your machine is NOT running the latest version of python, please refer to the Installing Python section below.
+
+Once you have confirmed that Python is installed and your machine is running the latest version, you will then need to install NLTK(Natural Language Toolkit):
 
 ```pip install nltk```
 
-If your machine is NOT running the latest version of python, please refer to the Installing Python section below.
 ### Installing Python:
 
 ##### Windows Users:
