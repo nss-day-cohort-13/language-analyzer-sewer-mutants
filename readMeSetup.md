@@ -50,7 +50,7 @@ Go to the end of the string, and enter a semi-colon, and the new path entry. ;C:
 
 ##### Osx/Pyenv:
 
-If you don't have Homebrew installedThen run these commands in order.
+If you don't have Homebrew installed then run these commands in order.
 
 ```
 brew install pyenv
