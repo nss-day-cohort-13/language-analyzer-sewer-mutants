@@ -7,6 +7,7 @@ class Behave:
   # excited_list=[]
   # inquisitive_list=[]
   def __init__(self, text):
+      # feedback: DocStrings needed
     self.tokenizer = Token(" ".join(text))
     self.aggressiveDict = {}
     self.passiveDict = {}
@@ -25,6 +26,7 @@ class Behave:
     print(self.assign_inquisitive_values(text))
 
   def input_is_list(self, phrase):
+    # feedback: DocStrings needed
     #"assures the input is not an empty string, and converts input into lower case"
 
     text = phrase
@@ -32,6 +34,7 @@ class Behave:
 
 
   def assign_aggressive_values(self, phrase):
+    # feedback: DocStrings needed
     aggressive_list=[]
     for item in phrase:
           value = lexicon.aggressive_behavior.get(item, 0)
@@ -51,6 +54,7 @@ class Behave:
 
 
   def assign_passive_values(self, phrase):
+    # feedback: DocStrings needed
     passive_list=[]
     for item in phrase:
           value = lexicon.passive_behavior.get(item, 0)
@@ -70,6 +74,7 @@ class Behave:
 
 
   def assign_excited_values(self,phrase):
+    # feedback: DocStrings needed
     excited_list=[]
     for item in phrase:
           value = lexicon.excited_behavior.get(item, 0)
@@ -89,6 +94,7 @@ class Behave:
 
 
   def assign_inquisitive_values(self,phrase):
+    # feedback: DocStrings needed
     inquisitive_list=[]
     for item in phrase:
           value = lexicon.inquisitive_behavior.get(item, 0)
@@ -106,6 +112,7 @@ class Behave:
     return inquisitive_dict
 
   def spitBehavior(self, text):
+    # feedback: DocStrings needed
     if self.assign_aggressive_values(text) >= self.assign_passive_values(text):
       print(self.assign_aggressive_values(text))
     elif self.assign_passive_values(text) >= self.assign_aggressive_values(text):

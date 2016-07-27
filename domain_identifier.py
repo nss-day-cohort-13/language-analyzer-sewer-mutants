@@ -2,6 +2,7 @@ from tokenizer import *
 import lexicon
 
 class Domain:
+# feedback: DocStrings needed
 
   # political_list=[]
   # relational_list=[]
@@ -24,6 +25,7 @@ class Domain:
 
 
   def input_is_list(self, phrase):
+    # feedback: DocStrings needed
     #"assures the input is not an empty string, and converts input into lower case"
 
     text = phrase
@@ -31,6 +33,7 @@ class Domain:
 
 
   def assign_behavioral_values(self, phrase):
+    # feedback: DocStrings needed
     behavioral_list=[]
     for item in phrase:
           value = lexicon.behavioral_sentiment.get(item, 0)
@@ -50,6 +53,7 @@ class Domain:
 
 
   def assign_political_values(self, phrase):
+    # feedback: DocStrings needed
     political_list=[]
     for item in phrase:
           value = lexicon.political_sentiment.get(item, 0)
@@ -69,6 +73,7 @@ class Domain:
 
 
   def assign_relational_values(self,phrase):
+    # feedback: DocStrings needed
     relational_list=[]
     for item in phrase:
           value = lexicon.relational_sentiment.get(item, 0)
@@ -88,6 +93,7 @@ class Domain:
 
 
   def spitsentiment(self, text):
+    # feedback: DocStrings needed
     if self.assign_behavioral_values(text) >= self.assign_political_values(text):
       print(self.assign_behavioral_values(text))
     elif self.assign_political_values(text) >= self.assign_behavioral_values(text):

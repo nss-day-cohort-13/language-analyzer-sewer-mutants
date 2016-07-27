@@ -2,11 +2,13 @@ from tokenizer import *
 import lexicon
 
 class Sentiment:
+# feedback: DocStrings needed
 
   # neutral_list=[]
   # positive_list=[]
   # inquisitive_list=[]
   def __init__(self, text):
+  # feedback: DocStrings needed
     self.tokenizer = Token(" ".join(text))
     self.negativeDict = {}
     self.neutralDict = {}
@@ -24,6 +26,7 @@ class Sentiment:
 
 
   def input_is_list(self, phrase):
+    # feedback: DocStrings needed
     #"assures the input is not an empty string, and converts input into lower case"
 
     text = phrase
@@ -31,6 +34,7 @@ class Sentiment:
 
 
   def assign_negative_values(self, phrase):
+    # feedback: DocStrings needed
     negative_list=[]
     for item in phrase:
           value = lexicon.negative_sentiment.get(item, 0)
@@ -50,6 +54,8 @@ class Sentiment:
 
 
   def assign_neutral_values(self, phrase):
+        # feedback: DocStrings needed
+
     neutral_list=[]
     for item in phrase:
           value = lexicon.neutral_sentiment.get(item, 0)
@@ -69,6 +75,8 @@ class Sentiment:
 
 
   def assign_positive_values(self,phrase):
+    # feedback: DocStrings needed
+
     positive_list=[]
     for item in phrase:
           value = lexicon.positive_sentiment.get(item, 0)
@@ -88,6 +96,7 @@ class Sentiment:
 
 
   def spitsentiment(self, text):
+    # feedback: DocStrings needed
     if self.assign_negative_values(text) >= self.assign_neutral_values(text):
       print(self.assign_negative_values(text))
     elif self.assign_neutral_values(text) >= self.assign_negative_values(text):
@@ -97,4 +106,3 @@ class Sentiment:
       print(self.assign_positive_values(text))
     elif self.assign_inquisitive_values(text) >= self.assign_positive_values(text):
       print(self.assign_inquisitive_values(text))
-
